@@ -1,0 +1,70 @@
+{
+  "Framester": [{
+      "competencyQuestion": "ABC",
+      "query": "SELECT * {?s ?p \"asdas\"}",
+      "url": "ABC"
+    },
+    {
+      "competencyQuestion": "ABC",
+      "query": "ANC",
+      "url": "ABC"
+    },
+    {
+      "competencyQuestion": "ABC",
+      "query": "ANC",
+      "url": "ABC"
+    },
+    {
+      "competencyQuestion": "ABC",
+      "query": "ANC",
+      "url": "ABC"
+    }
+  ],
+  "FrameNet": {
+    "fn17": [{
+        "competencyQuestion": "FN1",
+        "query": "SELECT * {?s ?p ?o}",
+        "url": "ABC"
+      },
+      {
+        "competencyQuestion": "FN2",
+        "query": "SELECT * {?s1 ?p ?o}",
+        "url": "ABC"
+      },
+      {
+        "competencyQuestion": "FN3",
+        "query": "SELECT * {?s2 ?p ?o}",
+        "url": "ABC"
+      },
+      {
+        "competencyQuestion": "FN4",
+        "query": "SELECT * {?s3 ?p ?o}",
+        "url": "ABC"
+      }
+    ],
+		"fn18": {
+	    "fn181": [{
+	        "competencyQuestion": "FN1",
+	        "query": "SELECT * {?s ?p ?o}",
+	        "url": "ABC"
+	      },
+	      {
+	        "competencyQuestion": "FN2",
+	        "query": "SELECT * {?s1 ?p ?o}",
+	        "url": "ABC"
+	      },
+	      {
+	        "competencyQuestion": "FN3",
+	        "query": "SELECT * {?s2 ?p ?o}",
+	        "url": "ABC"
+	      },
+	      {
+	        "competencyQuestion": "FN4",
+	        "query": "SELECT * {?s3 ?p ?o}",
+	        "url": "ABC"
+	      }
+	    ]
+	  }
+  }
+
+}
