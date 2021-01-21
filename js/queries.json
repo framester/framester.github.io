@@ -1,70 +1,22 @@
 {
-  "Framester": [{
-      "competencyQuestion": "ABC",
-      "query": "SELECT * {?s ?p \"asdas\"}",
-      "url": "ABC"
-    },
-    {
-      "competencyQuestion": "ABC",
-      "query": "ANC",
-      "url": "ABC"
-    },
-    {
-      "competencyQuestion": "ABC",
-      "query": "ANC",
-      "url": "ABC"
-    },
-    {
-      "competencyQuestion": "ABC",
-      "query": "ANC",
-      "url": "ABC"
-    }
-  ],
-  "FrameNet": {
-    "fn17": [{
-        "competencyQuestion": "FN1",
-        "query": "SELECT * {?s ?p ?o}",
-        "url": "ABC"
-      },
-      {
-        "competencyQuestion": "FN2",
-        "query": "SELECT * {?s1 ?p ?o}",
-        "url": "ABC"
-      },
-      {
-        "competencyQuestion": "FN3",
-        "query": "SELECT * {?s2 ?p ?o}",
-        "url": "ABC"
-      },
-      {
-        "competencyQuestion": "FN4",
-        "query": "SELECT * {?s3 ?p ?o}",
-        "url": "ABC"
-      }
-    ],
-		"fn18": {
-	    "fn181": [{
-	        "competencyQuestion": "FN1",
-	        "query": "SELECT * {?s ?p ?o}",
-	        "url": "ABC"
-	      },
-	      {
-	        "competencyQuestion": "FN2",
-	        "query": "SELECT * {?s1 ?p ?o}",
-	        "url": "ABC"
-	      },
-	      {
-	        "competencyQuestion": "FN3",
-	        "query": "SELECT * {?s2 ?p ?o}",
-	        "url": "ABC"
-	      },
-	      {
-	        "competencyQuestion": "FN4",
-	        "query": "SELECT * {?s3 ?p ?o}",
-	        "url": "ABC"
-	      }
-	    ]
-	  }
-  }
-
+	"WordNet" : [
+		{
+			"competencyQuestion": "Retrieve words associated with each synset",
+			"query": "PREFIX wn30schema: <https://w3id.org/framester/wn/wn30/schema/> \n \nSELECT DISTINCT ?syn ?lexical WHERE { \n  ?syn wn30schema:containsWordSense ?wordSense . \n  ?wordSense wn30schema:word ?word . \n  ?word wn30schema:lexicalForm ?lexical . \n} LIMIT 10"
+		}
+	],
+	"Sentiment": {
+		"DepecheMood":[
+			{
+		      "competencyQuestion": "Retrieve sentiment scores associated with each synset",
+		      "query": "PREFIX wn30instances: <https://w3id.org/framester/wn/wn30/instances/>\nPREFIX wn30schema: <https://w3id.org/framester/wn/wn30/schema/>\nPREFIX depmood: <https://w3id.org/framester/depechemood/depechemood2wn/>\nSELECT * WHERE {\n\t?syn depmood:AFRAIDscore ?afraid ;\n\tdepmood:AMUSEDscore ?amused ;\n\tdepmood:ANGRYscore ?angry ;\n\tdepmood:ANNOYEDscore ?annoyed ;\n\tdepmood:DONT_CAREscore ?dontCare ;\n\tdepmood:HAPPYscore ?happyScore ;\n\tdepmood:INSPIREDscore ?inspired ;\n\tdepmood:SADscore ?sad\n}\nLIMIT 10"
+		    }
+		],
+		"SentiWordNet":[
+			{
+				"competencyQuestion":"Retrieve polarity score associated with each synset",
+				"query":"PREFIX swn: <https://w3id.org/framester/sentiwordnet/>\n\nSELECT DISTINCT * WHERE {\n  ?syn swn:negScore ?negScore .\n  ?syn swn:posScore ?posScore .\n} LIMIT 10"
+			}
+		]
+	}
 }
