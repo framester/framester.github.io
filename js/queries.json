@@ -1,6 +1,10 @@
 {
 	"WordNet" : [
 		{
+			"competencyQuestion":"What are the synsets containing the word `American`?",
+			"query":"\nPREFIX wn30schema: <https://w3id.org/framester/wn/wn30/schema/>\n\nSELECT DISTINCT ?syn\nWHERE{\n ?syn wn30schema:containsWordSense ?ws .\n ?ws wn30schema:word ?w  .\n ?w wn30schema:lexicalForm ?lf .\n FILTER(str(?lf)=\"American\")\n}"
+		},
+		{
 			"competencyQuestion": "Retrieve words associated with each synset",
 			"query": "PREFIX wn30schema: <https://w3id.org/framester/wn/wn30/schema/> \n \nSELECT DISTINCT ?syn ?lexical WHERE { \n  ?syn wn30schema:containsWordSense ?wordSense . \n  ?wordSense wn30schema:word ?word . \n  ?word wn30schema:lexicalForm ?lexical . \n} LIMIT 10"
 		}
