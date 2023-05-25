@@ -1,0 +1,12 @@
+[
+  {
+    "competencyQuestion": "Which are the verbsenses of VerbNet?",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\n    SELECT DISTINCT ?verbsense\n    WHERE{\n      ?verbsense a <https://w3id.org/framester/vn/schema/VerbSense> .\n    }\nLIMIT 200",
+    "url": ""
+  },
+  {
+    "competencyQuestion": "What is the VerbClass of a verbsense?",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\n    PREFIX vn: <https://w3id.org/framester/vn/schema/>\n    PREFIX vndata: <https://w3id.org/framester/vn/vn31/data/>\n    SELECT DISTINCT ?verbClass\n    WHERE{\n    ?verbClass vn:containsVerbSense vndata:Choose_13050100> .\n    }\n    LIMIT 200",
+    "url": ""
+  }
+]

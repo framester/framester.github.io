@@ -1,0 +1,12 @@
+[
+  {
+    "competencyQuestion": "Role types of (roles of) a role set",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\n    PREFIX pbschema: <https://w3id.org/framester/pb/schema/>\n    PREFIX pbdata: <https://w3id.org/framester/pb/data/roleset/>\n    SELECT DISTINCT ?role ?roletype\n    WHERE{\n    pbdata:choose-01 pbschema:hasRole ?role .\n    OPTIONAL {?role fschema:subsumedUnder ?roletype}\n    }\n    LIMIT 200",
+    "url": ""
+  },
+  {
+    "competencyQuestion": "Which are the Propbank Rolesets",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\n    PREFIX pbschema: <https://w3id.org/framester/pb/schema/>\n    PREFIX pbdata: <https://w3id.org/framester/pb/data/roleset/>\n    SELECT DISTINCT ?roleset\n    WHERE{\n    ?roleset a pbschema:RoleSet .\n    }\n    LIMIT 200",
+    "url": ""
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "competencyQuestion": "Which are the frames in FrameNet?",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\n    PREFIX fnschema: <https://w3id.org/framester/framenet/tbox/>\n    PREFIX fndata: <https://w3id.org/framester/framenet/abox/>\n    SELECT DISTINCT ?frame ?flabel\n    WHERE{\n    ?frame a fnschema:Frame; rdfs:label ?flabel .\n    }\nLIMIT 200",
+    "url": ""
+  },
+  {
+    "competencyQuestion": "Semantic types of frame elements",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\n    PREFIX fnschema: <https://w3id.org/framester/framenet/tbox/>\n    PREFIX frame: <https://w3id.org/framester/framenet/abox/frame/>\n    SELECT DISTINCT ?felabel ?stlabel\n    WHERE{\n    ?fe a fnschema:FrameElement . frame:Choosing fnschema:hasFrameElement ?fe .\n    ?fe rdfs:label ?felabel .\n    OPTIONAL {?fe fnschema:hasSemType ?st . ?st rdfs:label ?stlabel}\n    }\nLIMIT 200",
+    "url": ""
+  }
+]

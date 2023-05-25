@@ -1,0 +1,12 @@
+[
+  {
+    "competencyQuestion": "Extract all words contained in the synset noun “methamphetamine” and its gloss",
+    "query": "SELECT DISTINCT ?label ?gloss ?wlabel \n WHERE{ \n <https://w3id.org/framester/wn/wn30/instances/synset-methamphetamine-noun-1> wn30schema:containsWordSense/wn30schema:word ?word; wn30schema:gloss ?gloss; rdfs:label ?label .\n ?word wn30schema:lexicalForm ?wlabel .\n }",
+    "url": ""
+  },
+  {
+    "competencyQuestion": "Retrieve the hyperonyms of the synset noun “methamphetamine”",
+    "query": "PREFIX fschema: <https://w3id.org/framester/schema/>\nSELECT DISTINCT ?label ?hyp\n WHERE{\n<https://w3id.org/framester/wn/wn30/instances/synset-methamphetamine-noun-1> rdfs:label ?label ; \n wn30schema:hyponymOf ?hyp .\n }    ",
+    "url": ""
+  }
+]
